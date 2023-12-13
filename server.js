@@ -9,7 +9,7 @@ const options = {
 
 const server = https.createServer(options, (req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello, this is your secure server!\n");
+  res.end("Hello, this is your HTTPS secure server!\n");
 });
 
 const PORT = process.env.PORT || 443;
