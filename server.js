@@ -1,13 +1,13 @@
 // server.js
-import { createServer } from "https";
-import { readFileSync } from "fs";
+const https = require("https");
+const fs = require("fs");
 
 const options = {
-  key: readFileSync("/path/to/private-key.pem"),
-  cert: readFileSync("/path/to/certificate.pem"),
+  key: fs.readFileSync("./private_file/private-key.pem"),
+  cert: fs.readFileSync("./private_file/certificate.pem"),
 };
 
-const server = createServer(options, (req, res) => {
+const server = https.createServer(options, (req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
   res.end("Hello, this is your secure server!\n");
 });
